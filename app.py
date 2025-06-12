@@ -4,7 +4,7 @@ import json, re, pickle, io, random
 import numpy as np
 
 import nltk
-from gensim.models import KeyedVectors
+
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report, accuracy_score, confusion_matrix
