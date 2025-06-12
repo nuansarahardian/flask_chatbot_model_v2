@@ -1,9 +1,8 @@
 # Import libraries
-from flask import Flask, request, jsonify
-import json, re, pickle, io, random
+import json, re, pickle, random
 import numpy as np
+from flask import Flask, request, jsonify
 
-import nltk
 
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
@@ -14,6 +13,7 @@ from tensorflow.keras.layers import Embedding, GRU, Dense, Dropout, Bidirectiona
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
+
 
 # === Inisialisasi Flask App ===
 app = Flask(__name__)
@@ -1445,7 +1445,6 @@ def main():
             print(f"🤖 Bot: Maaf, ada kesalahan teknis. {str(e)}")
             print("🤖 Bot:", state.reset())
 
-
 # === Endpoint Flask ===
 @app.route("/chat", methods=["POST"])
 def chat():
@@ -1461,6 +1460,5 @@ if __name__ == "__main__":
 
 
     import os
-    port = int(os.environ.get("PORT", 5000))
+    port = int(os.environ.get("PORT", 8080))
     app.run(host="0.0.0.0", port=port)
-
